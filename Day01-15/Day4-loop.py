@@ -68,7 +68,7 @@
 #     star+='*'
 
 # triangle2 = int(input('请输入第二类三角形的层数:'))
-# spaceCounter = triangle2
+# spaceCounter = triangle2-1
 # star = '*'
 # space =' '
 # for i in range(1,triangle2+1):
@@ -77,7 +77,7 @@
 #     spaceCounter-=1
 
 triangle3 = int(input('请输入第二类三角形的层数:'))
-spaceCounter = triangle3
+spaceCounter = triangle3-1
 star = '*'
 space =' '
 for i in range(1,triangle3+1):
