@@ -36,53 +36,53 @@
 # 玩家第一次摇骰子如果摇出了7点或11点，玩家胜；玩家第一次如果摇出2点、3点或12点，庄家胜；
 # 其他点数玩家继续摇骰子，如果玩家摇出了7点，庄家胜；如果玩家摇出了第一次摇的点数，玩家胜；
 # 其他点数，玩家继续要骰子，直到分出胜负。
-# import random
-# money = 1000                  #玩家本金
-# bank = 10000                  #庄家本金
-# text = '糟糕！你破产了'        #输出文字
-# while money>0:                #还有钱 可以继续玩
-#     if bank<=0:                #庄家破产
-#         text ='太厉害了，你把庄家赢破产了'
-#         break
-#     else:
-#         count = 1
-#         dice1 = random.randrange(1,7) #第一次扔出的骰子1
-#         dice2 = random.randrange(1,7) #第一次扔出的骰子2
-#         while True:
-#                 bet = int(input('请输入下注金额：'))
-#                 if 0 < bet <= money:  #赌注判断
-#                     break
-#                 else:
-#                     print('不好意思你的钱不够了。')
-#         if dice1+dice2==7 or dice1+dice2==11:
-#             print('第%d轮%d 点！玩家胜利！'%(count,dice1+dice2))
-#             money+=bet
-#             bank-=bet
-#             print('恭喜!你赢了%d元,现在账户总共有%d元'%(bet,money))
-#         elif dice1+dice2==2 or dice1+dice2==3 or dice1+dice2==12:
-#             print('第%d轮%d 点！庄家胜利！'%(count,dice1+dice2))
-#             money-=bet
-#             bank+=bet
-#             print('糟糕!你输了%d元,现在账户总共有%d元'%(bet,money))
-#         else:
-#             print('第%d轮%d 点！继续！'%(count,dice1+dice2))
-#             while True:
-#                 count+=1
-#                 currentDice1 = random.randrange(1,7) #继续仍骰子
-#                 currentDice2 = random.randrange(1,7)
-#                 if currentDice1+currentDice2==7:
-#                     print('第%d轮%d 点！庄家胜利！'%(count,currentDice1+currentDice2))
-#                     money-=bet
-#                     bank+=bet
-#                     print('糟糕!你输了%d元,现在账户总共有%d元'%(bet,money))
-#                     break
-#                 elif currentDice1+currentDice2==(dice1+dice2):
-#                     print('第%d轮%d 点！玩家胜利！'%(count,currentDice1+currentDice2))
-#                     money+=bet
-#                     bank-=bet
-#                     print('恭喜!你赢了%d元,现在账户总共有%d元'%(bet,money))
-#                     break
-# print(text)
+import random
+money = 1000                  #玩家本金
+bank = 10000                  #庄家本金
+text = '糟糕！你破产了'        #输出文字
+while money>0:                #还有钱 可以继续玩
+    if bank<=0:                #庄家破产
+        text ='太厉害了，你把庄家赢破产了'
+        break
+    else:
+        count = 1
+        dice1 = random.randrange(1,7) #第一次扔出的骰子1
+        dice2 = random.randrange(1,7) #第一次扔出的骰子2
+        while True:
+                bet = int(input('请输入下注金额：'))
+                if 0 < bet <= money:  #赌注判断
+                    break
+                else:
+                    print('不好意思你的钱不够了。')
+        if dice1+dice2==7 or dice1+dice2==11:
+            print('第%d轮%d 点！玩家胜利！'%(count,dice1+dice2))
+            money+=bet
+            bank-=bet
+            print('恭喜!你赢了%d元,现在账户总共有%d元'%(bet,money))
+        elif dice1+dice2==2 or dice1+dice2==3 or dice1+dice2==12:
+            print('第%d轮%d 点！庄家胜利！'%(count,dice1+dice2))
+            money-=bet
+            bank+=bet
+            print('糟糕!你输了%d元,现在账户总共有%d元'%(bet,money))
+        else:
+            print('第%d轮%d 点！继续！'%(count,dice1+dice2))
+            while True:
+                count+=1
+                currentDice1 = random.randrange(1,7) #继续仍骰子
+                currentDice2 = random.randrange(1,7)
+                if currentDice1+currentDice2==7:
+                    print('第%d轮%d 点！庄家胜利！'%(count,currentDice1+currentDice2))
+                    money-=bet
+                    bank+=bet
+                    print('糟糕!你输了%d元,现在账户总共有%d元'%(bet,money))
+                    break
+                elif currentDice1+currentDice2==(dice1+dice2):
+                    print('第%d轮%d 点！玩家胜利！'%(count,currentDice1+currentDice2))
+                    money+=bet
+                    bank-=bet
+                    print('恭喜!你赢了%d元,现在账户总共有%d元'%(bet,money))
+                    break
+print(text)
 # ps 玩了好久，除了把bank改到1000，全压的豪赌，从来没有把庄家赢破产的
 
 
